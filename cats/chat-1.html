@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" 
+x-data="{menuIsOpen: false}" :class="{noscroll:menuIsOpen,}"
+x-data="{"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Chaton</title>
+        <script defer src="https://unpkg.com/alpinejs"></script>
+        <style>
+          .menu {
+            position:fixed;
+            top: 0;
+            left: 0;
+            width: 100vW;
+            height: 100vH;
+            background: #fff;
+            display: grid;
+            place-content: center;
+          }
+          .header__menuBtn {
+            position: relative;
+            z-index: 10;
+          }
+          .noscroll,
+          .noscroll body {
+            overflow: hidden;
+          }
+        </style>
+    </head>
+    <body>
+        <!-- https://emmet.io/ -->
+        <!-- header>h1{Test de menu} -->
+        <header>
+          <button aria-controls="mainNav" 
+          @click="menuIsOpen = ! menuIsOpen" 
+          class="header__menuBtn"
+          >
+          <svg width="32" height="32" viewBox="0 0 24 24"><path fill="#888888" d="M21 7H3a1 1 0 0 1 0-2h18a1 1 0 0 1 0 2zm0 4H3a1 1 0 0 1 0-2h18a1 1 0 0 1 0 2zm0 4H3a1 1 0 0 1 0-2h18a1 1 0 0 1 0 2zm0 4H3a1 1 0 0 1 0-2h18a1 1 0 0 1 0 2z"/></svg>
+          </button>
+          <a href="/index.html">Accueil</a>
+          <h1>Cat 1</h1>
+          <nav id="mainNav" 
+          x-show="menuIsOpen" 
+          x-transition.duration.800ms
+          class="menu"
+          >
+            <ul>
+              <li><a href="cats/chat-1.html">Chat 1</a></li>
+              <li><a href="#">item 2</a></li>
+              <li><a href="#">item 3</a></li>
+            </ul>
+          </nav>
+        </header>
+        <h2>Chaton</h2>
+        <p>
+            <img src="/cats/Indian_cat(felis_catus).jpg" alt="Chaton tout mignon" />
+        </p>
+    </body>
+</html>
